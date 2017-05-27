@@ -1,0 +1,15 @@
+- if flash?
+  .flash
+    - if flash[:notice]
+      .notice
+        p = flash[:notice]
+    - if flash[:alert]
+      .alert
+        p = flash[:alert]
+
+h1 Please provide your github user and let the stalk begin
+
+form action="/search" method="post"
+  == csrf_tag
+  input type="text" name="username" placeholder="Please introduce your Github User"
+  input type="submit" value="Begin"

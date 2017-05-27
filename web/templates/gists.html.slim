@@ -1,0 +1,9 @@
+h1 This is a list of Gists
+ul
+- gists.each do |gist|
+  li
+    p
+      a href=gist[:html_url] =gist[:description]
+    p Files:
+    - gist[:files].each do |file|
+      p #{file[:name]} | #{file[:language]}
